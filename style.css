@@ -1,0 +1,335 @@
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #f0f0f0;
+    color: #f0f0f0;
+}
+
+header {
+    background-image: url('imgs/nav.png');
+    height: 5em;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #6c6c6c;
+}
+
+header div.left {
+    display: flex;
+    align-items: center;
+    margin-left: 1em;
+    color: #cc9600;
+    font-weight: 700;
+    column-gap: 10px;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    column-gap: 30px;
+    column-gap: 70px;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+header nav ul li a:hover {
+    color: #cc9600;
+    background-color: rgba(204, 150, 0, 0.3);
+    border-radius: 5px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+header div.right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 30px;
+}
+header div.right .pic {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 3em;
+    row-gap: 6px;
+}
+
+header div.right .pic span {
+    font-size: 12px;
+    color: #cc9600;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    margin: 0;
+    padding: 0;
+}
+
+main section.first-sec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 100px;
+    background-image: url('imgs/screen.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+main section.first-sec div.intoduction{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+    margin-top: 100px;
+}
+main section.first-sec  h1{
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: #cc9600;
+}
+main section.first-sec p{
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+main section.first-sec .search{
+    border: 1px solid #836003;
+    border-radius: 10px;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    width: 350px;
+}
+
+main .first-sec .search input{
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+}
+
+main .first-sec .search input::placeholder{
+    color: #e1d4b0;
+    font-size: 15px;
+}
+
+
+main .first-sec .search button{
+    background-color: #4b330b;
+    color: rgb(209, 197, 197);
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    width: 140px;
+    height: 30px;
+}
+
+main section.first-sec .search button:hover {
+    background-color: #836003;
+    color: #fff;
+    border: 2px solid #836003;
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+main section.second-sec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    /* min-height: 10vh; */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+main section.second-sec  h2{
+    margin: 0;
+    margin-top: 100px;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    color: black;
+}
+main section.second-sec .picks{
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    color: black;
+    column-gap: 60px;
+}
+
+main .second-sec .picks .fav-book{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    column-gap: 10px;
+}
+main .second-sec .picks .fav-book h4{
+    margin: 0;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+main .second-sec .picks .fav-book p{
+    margin: 0;
+    margin-top: 8px;
+}
+
+main .second-sec .picks .fav-book div{
+    margin-right: 30px;
+}
+
+main .second-sec .dots{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    margin-top: 80px;
+}
+
+main .third-sec {
+    background-color: #080404;
+    margin-top: 100px;
+    padding: 100px 50px 0 50px;
+}
+main .third-sec .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 50px;
+    background-color: #080404;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+main .third-sec .container aside{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 20px;
+}
+
+main .third-sec .container aside{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    column-gap: 20px;
+}
+
+main .third-sec .container aside h2{
+    margin: 0;
+    font-size: 40px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+main .third-sec .container aside h2 span{
+    color: #cc9600;
+    font-size: 30px;
+}
+
+main .third-sec .container aside p{
+    margin: 0;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+main .third-sec .container aside .statistics{
+    display: flex;
+    align-items: center;
+    column-gap: 220px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.third-sec .container aside .statistics .calc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 12px;    
+}
+.third-sec .container aside .statistics .calc span{
+    font-size: 20px;
+    color: #cc9600;
+}
+
+.third-sec .container aside .statistics .calc span:first-child{
+    font-size: 40px;
+}
+
+.third-sec .container aside .statistics .calc span:nth-child(2){
+    font-size: 15px;
+}
+
+.third-sec .container aside button{
+    background-color: #080404;
+    border: 1px solid #cc9600;
+    color: rgb(209, 197, 197);
+    border-radius: 5px;
+    padding: 5px;
+    width: 150px;
+    height: 35px;
+    margin-top: px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.third-sec .container aside button:hover {
+    background-color: #cc9600;
+    border: 1px solid #080404;
+    color: white;
+    transform: scale(1.05);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: gray;
+    margin-top: 50px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #080404;
+    column-gap: 100px;
+    height: 5em;
+    color: #cc9600;
+}
+
+footer span:first-child {
+    font-size: 12px;
+    font-weight: 200;
+    color: white;
+}
