@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-image: url('imgs/nav.png');
+    background-image: url('../imgs/nav.png');
     height: 5em;
     background-size: cover;
     display: flex;
@@ -86,7 +86,7 @@ main section.first-sec {
     flex-direction: column;
     align-items: center;
     row-gap: 100px;
-    background-image: url('imgs/screen.png');
+    background-image: url('../imgs/screen.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     min-height: 100vh;
@@ -218,7 +218,7 @@ main .second-sec .dots{
 main .third-sec {
     background-color: #080404;
     margin-top: 100px;
-    padding: 100px 50px 0 50px;
+    padding: 100px 50px 130px 50px;
 }
 main .third-sec .container {
     display: flex;
@@ -311,25 +311,39 @@ main .third-sec .container aside .statistics{
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
-.line {
-    width: 100%;
-    height: 2px;
-    background-color: gray;
-    margin-top: 50px;
-}
 
-footer {
-    display: flex;
-    justify-content: center;
+
+footer{
+    position: relative;
     align-items: center;
     background-color: #080404;
     column-gap: 100px;
     height: 5em;
     color: #cc9600;
+    padding: 0 50px;
+    
 }
 
-footer span:first-child {
-    font-size: 12px;
-    font-weight: 200;
-    color: white;
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: gray;
+    margin-bottom:30px;
+}
+
+footer img {
+    position: absolute;
+    bottom: 50px;
+    margin-bottom: 50px;
+}
+
+footer div {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+    width: 100%;
+}
+
+footer div span:first-child {
+    color: #f0f0f0;
 }
