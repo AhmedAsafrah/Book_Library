@@ -10,7 +10,6 @@ const bookFormModal = document.getElementById("book-form-modal");
 const addBookButton = document.getElementById("add-book-button");
 
 const openForm = () => {
-  // Clear the input fields when opening the form
   document.getElementById("book-title").value = "";
   document.getElementById("book-author").value = "";
   document.getElementById("book-type").value = "";
