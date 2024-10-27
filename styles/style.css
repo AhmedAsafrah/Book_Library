@@ -1,9 +1,14 @@
-
+html, body {
+    height: 100%;
+}
 body {
     padding: 0;
     margin: 0;
     background-color: #f0f0f0;
     color: #f0f0f0;
+    position: relative;
+    display: flex;
+    flex-direction: column; 
 }
 
 header {
@@ -14,6 +19,11 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #6c6c6c;
+    padding: 0 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    
 }
 
 header div.left {
@@ -74,6 +84,8 @@ main {
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
+    flex: 1;
+    padding-top: 5em;
 }
 
 section {
@@ -125,6 +137,7 @@ main section.first-sec .search{
     align-items: center;
     column-gap: 10px;
     width: 350px;
+    font-size: 15px;
 }
 
 main .first-sec .search input{
@@ -312,29 +325,15 @@ main .third-sec .container aside .statistics{
 }
 
 
-
-footer{
+footer {
     position: relative;
-    align-items: center;
     background-color: #080404;
-    column-gap: 100px;
-    height: 5em;
     color: #cc9600;
-    padding: 0 50px;
-    
-}
-
-.line {
-    width: 100%;
-    height: 2px;
-    background-color: gray;
-    margin-bottom:30px;
-}
-
-footer img {
-    position: absolute;
-    bottom: 50px;
-    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 8em;
+    padding-left: 30px;
 }
 
 footer div {

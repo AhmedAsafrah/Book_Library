@@ -28,7 +28,7 @@
             <a href="library.html">Library</a>
           </li>
           <li>
-            <a href="personalLibrary.html">peraonalLibrary</a>
+            <a href="peraonalLibrary.html">peraonalLibrary</a>
           </li>
         </ul>
       </nav>
@@ -43,6 +43,23 @@
 
     <main>
       <h2>Explore All Books Here</h2>
+
+      <span onclick="openForm()" class="add-book">+</span>
+
+      <div class="modal" id="book-form-modal" style="display: none">
+        <div class="modal-content">
+          <h3>Add a New Book</h3>
+          <form id="book-form">
+            <input type="text" id="book-title" placeholder="Title" required />
+            <input type="text" id="book-author" placeholder="Author" required />
+            <input type="text" id="book-type" placeholder="Type" required />
+            <input type="text" id="book-img" placeholder="Image URL" required />
+            <button type="button" id="add-book-button">Add Book</button>
+            <button class="button-close" onclick="closeForm()">Close</button>
+          </form>
+        </div>
+      </div>
+
       <div class="container">
         <div class="book">
           <img src="../imgs/book1.png" alt="book" />
@@ -149,7 +166,6 @@
 
     <footer>
       <img src="../imgs/Rectangle 24.png" alt="" />
-      <div class="line"></div>
       <div>
         <span> &copy; 2024 | NETH BookLibrary. </span>
         <span>
@@ -158,5 +174,7 @@
         </span>
       </div>
     </footer>
+
+    <script src="../scripts/script.js"></script>
   </body>
 </html>
