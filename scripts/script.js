@@ -30,11 +30,11 @@ const loadData = () => {
   }
 };
 
+const bookContent = document.getElementById("book-content");
 const renderBooks = () => {
-  const content = document.querySelector(".content");
-  content.innerHTML = "";
+  bookContent.innerHTML = "";
   BOOKs.forEach((book, index) => {
-    content.insertAdjacentHTML(
+    bookContent.insertAdjacentHTML(
       "beforeend",
       `
       <div class="book">
@@ -109,4 +109,7 @@ const saveData = () => {
   localStorage.setItem("books", JSON.stringify(BOOKs));
 };
 
-loadData();
+if (bookContent) {
+  // check if the book-content element exists
+  loadData();
+}
