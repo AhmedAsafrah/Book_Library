@@ -5,4 +5,124 @@ main h2 {
     color: rgba(204, 150, 0);
 }
 
+main  {
+    height: 100%;
+}
 
+#personal-library {
+    display: flex;
+    align-items: center;
+    column-gap: 100px;
+    padding-left: 150px;
+    flex-wrap: wrap;
+    margin-bottom: 150px;
+}
+
+#personal-library .book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    margin: 10px;
+    padding: 30px 50px;
+    border: 1px solid rgba(204, 150, 0, 0.7); 
+    border-radius: 10px;
+    color: black;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 200px;
+}
+
+#personal-library .book:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+#personal-library .book img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+}
+
+#personal-library .book h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(204, 150, 0);
+    margin: 15px 0;
+}
+
+#personal-library .book p {
+    margin: 0;
+    font-size: 18px;
+    color: #333; 
+    font-weight: 400; 
+    line-height: 1.2; 
+    text-align: center; 
+    padding: 5px 0; 
+}
+
+#personal-library .book p:first-of-type {
+    font-weight: 700; 
+    font-size: 20px;
+    margin-bottom: 5px; 
+}
+
+#personal-library .book p:last-of-type {
+    color: #666;
+    font-size: 18px;
+}
+
+#personal-library .book div {
+    margin-top: 20px;
+    display: flex;
+    column-gap: 20px;
+}
+
+#personal-library .book div button#minus {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #e94a4a;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    font-size: 22px;
+    color: white;
+}
+
+#personal-library .book div button#minus:hover {
+    background-color: #ff3333;
+    transform: scale(1.08);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+#personal-library .book div button#minus:active {
+    background-color: #cc0000;
+    transform: scale(1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+#personal-library .book div button#toggle {
+    background-color: #cc9600; 
+    color: white;
+    border: none;
+    padding: 12px 24px; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    transition: background-color 0.3s, transform 0.2s; 
+    cursor: pointer;
+}
+
+#personal-library .book div button#toggle:hover {
+    background-color: #b88600; 
+    transform: translateY(-2px); 
+}
+
+#personal-library .book div button#toggle:active {
+    transform: translateY(0); 
+}

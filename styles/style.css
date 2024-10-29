@@ -301,7 +301,7 @@ main .third-sec .container aside .statistics{
     font-size: 15px;
 }
 
-.third-sec .container aside button{
+.third-sec .container aside a{
     background-color: #080404;
     border: 1px solid #cc9600;
     color: rgb(209, 197, 197);
@@ -309,12 +309,16 @@ main .third-sec .container aside .statistics{
     padding: 5px;
     width: 150px;
     height: 35px;
-    margin-top: px;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; */
+    text-decoration: none;
 }
 
-.third-sec .container aside button:hover {
+.third-sec .container aside a:hover {
     background-color: #cc9600;
     border: 1px solid #080404;
     color: white;
@@ -330,7 +334,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 8em;
+    height: 100px;
     padding-left: 30px;
 }
 
