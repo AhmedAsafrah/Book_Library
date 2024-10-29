@@ -11,6 +11,7 @@ const bookList = () => {
 };
 
 const BOOKs = [];
+const personalBooks = [];
 
 const loadData = () => {
   const savedBooks = JSON.parse(localStorage.getItem("books"));
@@ -46,7 +47,7 @@ const renderBooks = () => {
           <button id="toggle" onclick="toggleBook(${index})">${
         book.read ? "Unread" : "Read"
       }</button>
-          <button id="plus">+</button>
+          <button id="plus" onclick="addBookToPersonalLibrary(${index})">+</button>
           <button id="minus" onclick="removeBook(${index})">-</button
         </div>
       </div>
@@ -105,11 +106,67 @@ const closeForm = () => {
   document.body.style.overflow = "auto";
 };
 
+/*********************************************** */
+
+const personalContainer = document.getElementById("personal-library");
+
+const renderPersonalBooks = () => {
+  personalContainer.innerHTML = "";
+  personalBooks.forEach((book, index) => {
+    personalContainer.insertAdjacentHTML(
+      "beforeend",
+      `
+        <div class="book">
+          <img src="${book.img}" alt="book" />
+          <h3>${book.title}</h3>
+          <p>${book.author}</p>
+          <p>${book.type}</p>
+          <div>
+            <button id="minus" onclick="removePersonalBook(${index})">-</button
+          </div>
+        </div>
+        `
+    );
+  });
+  console.log("personalContainer not found!");
+};
+
+const addBookToPersonalLibrary = (index) => {
+  console.log("Adding book at index:", index);
+
+  if (index >= 0 && index < BOOKs.length) {
+    const bookToAdd = BOOKs[index];
+    console.log("Book to add:", bookToAdd);
+
+    if (!personalBooks.includes(bookToAdd)) {
+      personalBooks.push(bookToAdd);
+      console.log("Book added to personal library:", bookToAdd);
+    } else {
+      console.warn("Book already exists in personal library:", bookToAdd);
+    }
+
+    saveData();
+    renderPersonalBooks();
+    renderBooks();
+  } else {
+    console.error("Invalid index:", index);
+  }
+};
+
+const loadPersonalBooks = () => {
+  const savedPersonalBooks = JSON.parse(localStorage.getItem("personalBooks"));
+  if (savedPersonalBooks && savedPersonalBooks.length) {
+    personalBooks.push(...savedPersonalBooks);
+    renderPersonalBooks();
+  }
+};
+
 const saveData = () => {
   localStorage.setItem("books", JSON.stringify(BOOKs));
+  localStorage.setItem("personalBooks", JSON.stringify(personalBooks));
 };
 
 if (bookContent) {
-  // check if the book-content element exists
   loadData();
+  loadPersonalBooks();
 }
