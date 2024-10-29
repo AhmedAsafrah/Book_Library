@@ -26,10 +26,10 @@ const loadData = () => {
 };
 
 const renderBooks = () => {
-  const container = document.querySelector(".container");
-  container.innerHTML = ""; // Clear the container
+  const content = document.querySelector(".content");
+  content.innerHTML = ""; // Clear the content
   BOOKs.forEach((book) => {
-    container.insertAdjacentHTML(
+    content.insertAdjacentHTML(
       "beforeend",
       `
       <div class="book">

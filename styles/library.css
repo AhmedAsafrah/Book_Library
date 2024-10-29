@@ -45,7 +45,7 @@ main span.add-book:active {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-main div.container {
+main div.content {
     display: flex;
     align-items: center;
     column-gap: 100px;
@@ -54,7 +54,7 @@ main div.container {
     margin-bottom: 150px;
 }
 
-main div.container .book {
+main div.content .book {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,7 +67,7 @@ main div.container .book {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-main div.container .book:hover {
+main div.content .book:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
@@ -79,7 +79,7 @@ main div.container .book:hover {
 }
 
 
-main div.container .book h3 {
+main div.content .book h3 {
     margin: 0;
     font-size: 20px;
     font-weight: 700;
@@ -87,7 +87,7 @@ main div.container .book h3 {
     margin: 15px 0;
 }
 
-main div.container .book p {
+main div.content .book p {
     margin: 0;
     font-size: 18px;
     color: #333; 
@@ -97,24 +97,24 @@ main div.container .book p {
     padding: 5px 0; 
 }
 
-main div.container .book p:first-of-type {
+main div.content .book p:first-of-type {
     font-weight: 700; 
     font-size: 20px;
     margin-bottom: 5px; 
 }
 
-main div.container .book p:last-of-type {
+main div.content .book p:last-of-type {
     color: #666;
     font-size: 18px;
 }
 
-main div.container .book div {
+main div.content .book div {
     margin-top: 20px;
     display: flex;
     column-gap: 50px;
 }
 
-main div.container .book div button#plus {
+main div.content .book div button#plus {
     border-radius: 50%; 
     width: 50px; 
     height: 50px;
@@ -130,16 +130,16 @@ main div.container .book div button#plus {
     color: white; 
 }
 
-main div.container .book div button#plus:hover {
+main div.content .book div button#plus:hover {
     background-color: #decd5d; 
     transform: scale(1.05); 
 }
 
-main div.container .book div button#plus:active {
+main div.content .book div button#plus:active {
     transform: scale(0.95);
 }
 
-main div.container .book div button#toggle {
+main div.content .book div button#toggle {
     background-color: #cc9600; 
     color: white;
     border: none;
@@ -150,12 +150,12 @@ main div.container .book div button#toggle {
     cursor: pointer;
 }
 
-main div.container .book div button#toggle:hover {
+main div.content .book div button#toggle:hover {
     background-color: #b88600; 
     transform: translateY(-2px); 
 }
 
-main div.container .book div button#toggle:active {
+main div.content .book div button#toggle:active {
     transform: translateY(0); 
 }
 
