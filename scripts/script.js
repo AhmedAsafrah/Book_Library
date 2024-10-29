@@ -13,22 +13,27 @@ const bookList = () => {
 const BOOKs = [];
 
 const loadData = () => {
-  bookList()
-    .then((data) => {
-      data.forEach((book) => {
-        BOOKs.push(book);
+  const savedBooks = JSON.parse(localStorage.getItem("books"));
+  if (savedBooks && savedBooks.length) {
+    BOOKs.push(...savedBooks);
+    renderBooks();
+  } else {
+    bookList()
+      .then((data) => {
+        BOOKs.push(...data);
+        renderBooks();
+        saveData();
+      })
+      .catch((error) => {
+        console.error("Failed to load data:", error);
       });
-      renderBooks();
-    })
-    .catch((error) => {
-      console.error("Failed to load data:", error);
-    });
+  }
 };
 
 const renderBooks = () => {
   const content = document.querySelector(".content");
-  content.innerHTML = ""; // Clear the content
-  BOOKs.forEach((book) => {
+  content.innerHTML = "";
+  BOOKs.forEach((book, index) => {
     content.insertAdjacentHTML(
       "beforeend",
       `
@@ -38,8 +43,11 @@ const renderBooks = () => {
         <p>${book.author}</p>
         <p>${book.type}</p>
         <div>
-          <button id="toggle">Read</button>
+          <button id="toggle" onclick="toggleBook(${index})">${
+        book.read ? "Unread" : "Read"
+      }</button>
           <button id="plus">+</button>
+          <button id="minus" onclick="removeBook(${index})">-</button
         </div>
       </div>
       `
@@ -62,7 +70,22 @@ const addBook = () => {
 
   BOOKs.push(newBook);
   renderBooks();
+  saveData();
   closeForm();
+};
+
+const removeBook = (index) => {
+  BOOKs.splice(index, 1);
+  saveData();
+  renderBooks();
+};
+
+const toggleBook = (index) => {
+  const book = BOOKs[index];
+  book.read = !book.read;
+
+  saveData();
+  renderBooks();
 };
 
 const openForm = () => {
@@ -80,6 +103,10 @@ const closeForm = () => {
   const bookFormModal = document.getElementById("book-form-modal");
   bookFormModal.style.display = "none";
   document.body.style.overflow = "auto";
+};
+
+const saveData = () => {
+  localStorage.setItem("books", JSON.stringify(BOOKs));
 };
 
 loadData();

@@ -65,6 +65,7 @@ main div.content .book {
     border-radius: 10px;
     color: black;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 200px;
 }
 
 main div.content .book:hover {
@@ -111,7 +112,35 @@ main div.content .book p:last-of-type {
 main div.content .book div {
     margin-top: 20px;
     display: flex;
-    column-gap: 50px;
+    column-gap: 20px;
+}
+
+main div.content .book div button#minus {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #e94a4a;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    font-size: 22px;
+    color: white;
+}
+
+main div.content .book div button#minus:hover {
+    background-color: #ff3333;
+    transform: scale(1.08);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+main div.content .book div button#minus:active {
+    background-color: #cc0000;
+    transform: scale(1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 main div.content .book div button#plus {
