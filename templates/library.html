@@ -1,82 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>library</title>
+    <title>Library</title>
     <link rel="stylesheet" href="../styles/library.css" />
     <link rel="stylesheet" href="../styles/style.css" />
-  </head>
-  <body>
-    <header>
-      <div class="left">
+    <link rel="stylesheet" href="../styles/checkboxes.css" /> <!-- Link to the checkbox styles -->
+</head>
+<body>
+<header>
+    <div class="left">
         <img width="80px" src="../imgs/looogo.png" alt="Book Library logo" />
         <span>
-          NETH <br />
-          BOOKLIBRARY
+            NETH <br />
+            BOOKLIBRARY
         </span>
-      </div>
-      <nav>
+    </div>
+    <nav>
         <ul>
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-            <a href="about.html">About</a>
-          </li>
-          <li>
-            <a href="library.html">Library</a>
-          </li>
-          <li>
-            <a href="peraonalLibrary.html">Peraonal Library</a>
-          </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="library.html">Library</a></li>
+            <li><a href="personalLibrary.html">Personal Library</a></li>
         </ul>
-      </nav>
-      <div class="right">
+    </nav>
+    <div class="right">
         <img src="../imgs/Bell.png" alt="Notification Bell" />
         <div class="pic">
-          <img src="../imgs/profile-pic.png" alt="profile pic" />
-          <span>user1@booklibrary.com</span>
+            <img src="../imgs/profile-pic.png" alt="Profile pic" />
+            <span>user1@booklibrary.com</span>
         </div>
-      </div>
-    </header>
+    </div>
+</header>
 
-    <main>
-      <h2>Explore All Books Here</h2>
+<main>
+    <h2>Explore All Books Here</h2>
 
-      <span onclick="openForm()" class="add-book">+</span>
+    <span onclick="openForm()" class="add-book">+</span>
 
-      <div class="modal" id="book-form-modal" style="display: none">
+    <div class="modal" id="book-form-modal" style="display: none">
         <div class="modal-content">
-          <h3>Add a New Book</h3>
-          <form id="book-form">
-            <input type="text" id="book-title" placeholder="Title" required />
-            <input type="text" id="book-author" placeholder="Author" required />
-            <input type="text" id="book-type" placeholder="Type" required />
-            <input type="text" id="book-img" placeholder="Image URL" required />
-            <button type="button" onclick="addBook()" id="add-book-button">
-              Add Book
-            </button>
-            <button class="button-close" onclick="closeForm()">Close</button>
-          </form>
+            <h3>Add a New Book</h3>
+            <form id="book-form">
+                <input type="text" id="book-title" placeholder="Title" required />
+                <input type="text" id="book-author" placeholder="Author" required />
+                <input type="text" id="book-type" placeholder="Type" required />
+                <input type="text" id="book-img" placeholder="Image URL" required />
+                <button type="button" onclick="addBook()" id="add-book-button">Add Book</button>
+                <button class="button-close" onclick="closeForm()">Close</button>
+            </form>
         </div>
-      </div>
+    </div>
 
-      <div id="book-content"></div>
-      // this is where the books will be displayed
-    </main>
+    <div id="book-content"></div> <!-- This is where the books will be displayed -->
 
-    <footer>
-      <img src="../imgs/Rectangle 24.png" alt="" />
-      <div>
-        <span> &copy; 2024 | NETH BookLibrary. </span>
+  <!-- Checkbox section -->
+<div class="label-container">
+    <div class="label">
+        <input type="checkbox" id="all" class="filter" value="All" checked>
+        <label for="all" class="checkbox-icon"></label>
+        <span class="label-text">All</span>
+    </div>
+
+    <div class="label">
+        <input type="checkbox" id="novel" class="filter" value="Novel">
+        <label for="novel" class="checkbox-icon"></label>
+        <span class="label-text">Novel</span>
+    </div>
+
+    <div class="label">
+        <input type="checkbox" id="translations" class="filter" value="Translations">
+        <label for="translations" class="checkbox-icon"></label>
+        <span class="label-text">Translations</span>
+    </div>
+
+    <div class="label">
+        <input type="checkbox" id="kids-stories" class="filter" value="Kids' Stories">
+        <label for="kids-stories" class="checkbox-icon"></label>
+        <span class="label-text">Kids' Stories</span>
+    </div>
+</div>
+
+    <!-- End of Checkbox section -->
+</main>
+
+<footer>
+    <img src="../imgs/Rectangle 24.png" alt="" />
+    <div>
+        <span>&copy; 2024 | NETH BookLibrary. </span>
         <span>
-          Visit our branches in Hebron, Gaza, Nablus, and Jerusalem, and
-          register for our online platform to enjoy maximum benefits!
+            Visit our branches in Hebron, Gaza, Nablus, and Jerusalem, and register for our online platform to enjoy maximum benefits!
         </span>
-      </div>
-    </footer>
+    </div>
+</footer>
 
-    <script src="../scripts/script.js"></script>
-  </body>
+<script src="../scripts/script.js"></script>
+</body>
 </html>

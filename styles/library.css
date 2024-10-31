@@ -1,13 +1,11 @@
-
 body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
 
-
 main h2 {
-    margin: 50px;
+    margin: 60px;
     font-size: 40px;
     font-weight: 700;
     color: rgba(204, 150, 0);
@@ -78,7 +76,6 @@ main div#book-content .book:hover {
     height: 300px;
     object-fit: cover;
 }
-
 
 main div#book-content .book h3 {
     margin: 0;
@@ -280,4 +277,58 @@ main div#book-content .book div button#toggle:active {
     transform: translateY(0);
 }
 
+/* New Styles */
 
+body {
+    font-family: 'Bona Nova', Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Allows positioning of children */
+    height: 100vh; /* Full height of viewport */
+}
+
+.label-container {
+    display: flex; /* Allows inline display of labels */
+    align-items: center; /* Center align the items vertically */
+    position: absolute; /* Allows specific positioning */
+    left: 258px; /* Position from left */
+    top: 200px; /* Position from top */
+}
+
+.label {
+    display: flex; /* Allows items to be in-line */
+    align-items: center;
+    margin-left: 28px; /* Space on the left of each element */
+    margin-right: 34px; /* Space on the right of each element */
+}
+
+.checkbox-icon {
+    width: 28px; /* Icon width */
+    height: 28px; /* Icon height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(204, 150, 0); /* Border color */
+    border-radius: 4px; /* Rounded corners */
+    margin-right: 10px; /* Space between icon and label text */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.2s, color 0.2s; /* Smooth background color and text color change */
+}
+
+input[type="checkbox"] {
+    display: none; /* Hide the default checkbox */
+}
+
+input[type="checkbox"]:checked + .checkbox-icon {
+    background-color: rgba(204, 150, 0); /* Change background color when checked */
+    color: #fff; /* Text color when checked */
+}
+
+.label-text {
+    color: #000;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.56px;
+}

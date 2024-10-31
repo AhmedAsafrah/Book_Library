@@ -1,9 +1,9 @@
 const DATA = [
   {
-    title: "The Great Gatsby",
-    author: "F. Scott Fitzgerald",
-    genre: "Fiction",
-    img: "https://assets.brightspot.abebooks.a2z.com/dims4/default/29ba2ea/2147483647/strip/true/crop/198x300+0+0/resize/198x300!/format/jpg/quality/90/?url=http%3A%2F%2Fabebooks-brightspot.s3.us-west-2.amazonaws.com%2F52%2F35%2Fe55c9a4a40319171e006198da2cf%2Fbest-history07.jpg",
+    title: "A dance with Dragons",
+    author: "George R. R. Martin",
+    genre: "Novel",
+    img: "https://cdn.shopify.com/s/files/1/0420/1044/3928/files/Y3598HarryPotterandtheGobletofFire_USROUNDED_04f8be1d-f49b-46e2-993f-87dbff853198_1280x.png?v=1724248898",
   },
   {
     title: "To Kill a Mockingbird",
@@ -44,7 +44,7 @@ const DATA = [
   {
     title: "The Hobbit",
     author: "J.R.R. Tolkien",
-    genre: "Fantasy",
+    genre: "Novel",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxWAnoLSEF0wUini5QmHKOH6V3z3hiiI-CaA&s",
   },
   {
@@ -56,7 +56,7 @@ const DATA = [
   {
     title: "War and Peace",
     author: "Leo Tolstoy",
-    genre: "Historical Fiction",
+    genre: "Novel",
     img: "https://assets.brightspot.abebooks.a2z.com/dims4/default/29ba2ea/2147483647/strip/true/crop/198x300+0+0/resize/198x300!/format/jpg/quality/90/?url=http%3A%2F%2Fabebooks-brightspot.s3.us-west-2.amazonaws.com%2F52%2F35%2Fe55c9a4a40319171e006198da2cf%2Fbest-history07.jpg",
   },
 ];
