@@ -119,6 +119,8 @@ main section.first-sec  h1{
     margin: 0;
     padding: 0;
     color: #cc9600;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 main section.first-sec p{
     font-size: 20px;
@@ -219,12 +221,12 @@ main .second-sec .picks .fav-book div{
     margin-right: 30px;
 }
 
-main .second-sec .dots{
+/* main .second-sec .dots{
     display: flex;
     align-items: center;
     column-gap: 15px;
     margin-top: 80px;
-}
+} */
 
 main .third-sec {
     background-color: #080404;

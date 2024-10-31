@@ -1,7 +1,6 @@
-// Fetch book list from the API
 const bookList = () => {
   console.log("Fetching book list from API...");
-  return fetch("https://d508d3a3bab44aecb5fed0f178cf38ca.api.mockbin.io/")
+  return fetch("https://mocki.io/v1/443f4adf-3c7b-4187-bad1-0a83dc05c571")
     .then((response) => {
       if (response.ok) {
         console.log("Response received:", response);
@@ -30,16 +29,12 @@ const loadData = () => {
     BOOKs.push(...savedBooks);
     renderBooks();
   } else {
-    bookList()
-      .then((data) => {
-        console.log("Books fetched from API:", data);
-        BOOKs.push(...data);
-        renderBooks();
-        saveData();
-      })
-      .catch((error) => {
-        console.error("Failed to load data:", error);
-      });
+    bookList().then((data) => {
+      console.log("Books fetched from API:", data);
+      BOOKs.push(...data);
+      renderBooks();
+      saveData();
+    });
   }
 };
 
@@ -80,9 +75,10 @@ const renderBooks = () => {
       "beforeend",
       `
       <div class="book">
-        <img src="${book.img}" alt="${book.title}" />
+        <img src="${book.img}" alt="book" />
         <h3>${book.title}</h3>
         <p>${book.author}</p>
+        <p>${book.type}</p>
         <p>${book.genre}</p>
         <div>
           <button id="toggle" onclick="toggleBook(${index})">${
@@ -122,17 +118,18 @@ const addBook = () => {
     alert("Please fill out all fields before adding a book.");
     return;
   }
-
   const newBook = {
     title: bookTitle,
     author: bookAuthor,
+    type: bookGenre,
     genre: bookGenre, // Ensure genre matches API property
     img: bookImg,
+    read: false, // Default read status
   };
 
   BOOKs.push(newBook);
-  renderBooks();
   saveData();
+  renderBooks();
   closeForm();
 };
 
@@ -148,8 +145,8 @@ const toggleBook = (index) => {
 const removeBook = (index) => {
   console.log("Removing book at index:", index);
   BOOKs.splice(index, 1);
-  renderBooks();
   saveData();
+  renderBooks();
 };
 
 // Save data to localStorage
@@ -160,32 +157,74 @@ const saveData = () => {
 
 // Open/close form functions
 const openForm = () => {
-  document.getElementById("book-form-modal").style.display = "block";
+  document.getElementById("book-title").value = "";
+  document.getElementById("book-author").value = "";
+  document.getElementById("book-type").value = "";
+  document.getElementById("book-img").value = "";
+  const bookFormModal = document.getElementById("book-form-modal");
+  bookFormModal.style.display = "block";
+  document.body.style.overflow = "hidden";
 };
 
 const closeForm = () => {
-  document.getElementById("book-form-modal").style.display = "none";
+  const bookFormModal = document.getElementById("book-form-modal");
+  bookFormModal.style.display = "none";
+  document.body.style.overflow = "auto";
+};
+
+/*********************************************** */
+const personalContainer = document.getElementById("personal-library");
+
+const renderPersonalBooks = () => {
+  if (personalContainer) {
+    personalContainer.innerHTML = "";
+    personalBooks.forEach((book, index) => {
+      personalContainer.insertAdjacentHTML(
+        "beforeend",
+        `
+        <div class="book">
+          <img src="${book.img}" alt="book" />
+          <h3>${book.title}</h3>
+          <p>${book.author}</p>
+          <p>${book.type}</p>
+          <div>
+            <button id="toggle" onclick="togglePersonalBook(${index})">${
+          book.read ? "Unread" : "Read"
+        }</button>
+            <button id="minus" onclick="removePersonalBook(${index})">-</button>
+          </div>
+        </div>
+        `
+      );
+    });
+  } else {
+    console.log("personalContainer not found!");
+  }
+};
+
+const removePersonalBook = (index) => {
+  if (index >= 0 && index < personalBooks.length) {
+    personalBooks.splice(index, 1);
+    saveData();
+    renderPersonalBooks();
+  } else {
+    console.log("Invalid index:", index);
+  }
+};
+
+const togglePersonalBook = (index) => {
+  const book = personalBooks[index];
+  book.read = !book.read;
+  saveData();
+  renderPersonalBooks();
 };
 
 // Load personal books from localStorage
 const loadPersonalBooks = () => {
-  const savedPersonalBooks = JSON.parse(localStorage.getItem("personalBooks"));
-  if (savedPersonalBooks && savedPersonalBooks.length) {
-    personalBooks.push(...savedPersonalBooks);
-  }
-};
-
-const search = () => {
-  let input = document.getElementById("search").value;
-  input = input.toLowerCase();
-  // let x = document.getElementsByClassName('book');
-
-  for (let i = 0; i < BOOKs.length; i++) {
-    if (!BOOKs[i].title.toLowerCase().includes(input)) {
-      document.getElementById(i).style.display = "none";
-    } else {
-      document.getElementById(i).style.display = "block";
-    }
+  const savedBooks = JSON.parse(localStorage.getItem("personalBooks"));
+  if (savedBooks && savedBooks.length) {
+    personalBooks.push(...savedBooks);
+    renderPersonalBooks();
   }
 };
 
@@ -196,6 +235,6 @@ if (bookContent) {
 
 // Log when the window loads
 window.onload = () => {
+  loadPersonalBooks();
   console.log("Window loaded, loading personal books...");
-  loadPersonalBooks(); // Load personal books after loading data
 };

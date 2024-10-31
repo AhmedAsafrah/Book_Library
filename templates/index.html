@@ -1,157 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Library</title>
     <link rel="stylesheet" href="../styles/style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="left">
-            <img width="80px" src="../imgs/looogo.png" alt="Book Library logo" />
-            <span>
-                NETH <br />
-                BOOKLIBRARY
-            </span>
+      <div class="left">
+        <img width="80px" src="../imgs/looogo.png" alt="Book Library logo" />
+        <span>
+          NETH <br />
+          BOOKLIBRARY
+        </span>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="about.html">About</a>
+          </li>
+          <li>
+            <a href="library.html">Library</a>
+          </li>
+          <li>
+            <a href="Peraonal_Library.html">Personal Library</a>
+            <!-- Fixed typo in link -->
+          </li>
+        </ul>
+      </nav>
+      <div class="right">
+        <img src="../imgs/Bell.png" alt="Notification Bell" />
+        <div class="pic">
+          <img src="../imgs/profile-pic.png" alt="profile pic" />
+          <span>user1@booklibrary.com</span>
         </div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="about.html">About</a>
-                </li>
-                <li>
-                    <a href="library.html">Library</a>
-                </li>
-                <li>
-                    <a href="peraonalLibrary.html">Personal Library</a> <!-- Fixed typo in link -->
-                </li>
-            </ul>
-        </nav>
-        <div class="right">
-            <img src="../imgs/Bell.png" alt="Notification Bell" />
-            <div class="pic">
-                <img src="../imgs/profile-pic.png" alt="profile pic" />
-                <span>user1@booklibrary.com</span>
-            </div>
-        </div>
+      </div>
     </header>
-    
+
     <main>
-        <section class="first-sec">
-            <div class="introduction">
-                <h1>The Book Lover's Dreamland Awaits!</h1>
-                <p>
-                    Welcome to the perfect place for book lovers! Join us and be part of
-                    a growing community, where every book and story has the chance to
-                    spark inspiration and connect with new readers. <br />
-                    Share your favorites, discover new gems, and help build an
-                    ever-evolving library of stories.
-                </p>
+      <section class="first-sec">
+        <div class="introduction">
+          <h1>The Book Lover's Dreamland Awaits!</h1>
+          <p>
+            Welcome to the perfect place for book lovers! Join us and be part of
+            a growing community, where every book and story has the chance to
+            spark inspiration and connect with new readers. <br />
+            Share your favorites, discover new gems, and help build an
+            ever-evolving library of stories.
+          </p>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="Search for a book..." />
+          <button>Search</button>
+        </div>
+      </section>
+
+      <section class="second-sec">
+        <h2>Our Best Picks</h2>
+        <div class="picks">
+          <div class="fav-book">
+            <img src="../imgs/book1.png" alt="Book 1" />
+            <div>
+              <h4>Thunmanhandiya</h4>
+              <p>By Mahagamasekara</p>
             </div>
-            <div class="search">
-                <input type="text" placeholder="Search for a book..." />
-                <button>Search</button>
+          </div>
+          <div class="fav-book">
+            <img src="../imgs/book2.png" alt="Book 2" />
+            <div>
+              <h4>Gamperaliya</h4>
+              <p>By Martin Wickramasinghe</p>
             </div>
-        </section>
-        
-        <section class="second-sec">
-            <h2>Our Best Picks</h2>
-            <div class="picks">
-                <div class="fav-book">
-                    <img src="../imgs/book1.png" alt="Book 1" />
-                    <div>
-                        <h4>Thunmanhandiya</h4>
-                        <p>By Mahagamasekara</p>
-                    </div>
-                </div>
-                <div class="fav-book">
-                    <img src="../imgs/book2.png" alt="Book 2" />
-                    <div>
-                        <h4>Gamperaliya</h4>
-                        <p>By Martin Wickramasinghe</p>
-                    </div>
-                </div>
-                <div class="fav-book">
-                    <img src="../imgs/book3.png" alt="Book 3" />
-                    <div>
-                        <h4>Nectar in a Sieve</h4>
-                        <p>By Kamala Markandaya</p>
-                    </div>
-                </div>
-                <div class="fav-book">
-                    <img src="../imgs/book4.png" alt="Book 4" />
-                    <div>
-                        <h4>Adaraneeya Victoria</h4>
-                        <p>By Mohan Raj Madawala</p>
-                    </div>
-                </div>
+          </div>
+          <div class="fav-book">
+            <img src="../imgs/book3.png" alt="Book 3" />
+            <div>
+              <h4>Nectar in a Sieve</h4>
+              <p>By Kamala Markandaya</p>
             </div>
-            <div class="dots">
+          </div>
+          <div class="fav-book">
+            <img src="../imgs/book4.png" alt="Book 4" />
+            <div>
+              <h4>Adaraneeya Victoria</h4>
+              <p>By Mohan Raj Madawala</p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="dots">
                 <img src="../imgs/Ellipse 1.png" alt="" />
                 <img src="../imgs/Ellipse 2.png" alt="" />
                 <img src="../imgs/Ellipse 1.png" alt="" />
+            </div> -->
+      </section>
+
+      <section class="third-sec">
+        <div class="container">
+          <img width="1000" src="../imgs/Rectangle 21.png" alt="books" />
+          <aside>
+            <h2>
+              Your favourite
+              <span>
+                Reads <br />
+                Are Here!
+              </span>
+            </h2>
+            <p>
+              Discover your favorite books at the library! Access a diverse
+              collection of titles, from timeless classics to the latest
+              bestsellers. Explore unique resources like rare manuscripts and
+              audiobooks, and engage in community events that spark your love
+              for literature. Visit us today and unlock the joy of reading—your
+              library is here to inspire you!
+            </p>
+            <div class="statistics">
+              <div class="calc">
+                <span class="num">800+</span>
+                <span class="desc">Book Listings</span>
+              </div>
+              <div class="calc">
+                <span class="num">1K+</span>
+                <span class="desc">Registered Members</span>
+              </div>
+              <div class="calc">
+                <span class="num">50+</span>
+                <span class="desc">Branch Count</span>
+              </div>
             </div>
-        </section>
-        
-        <section class="third-sec">
-            <div class="container">
-                <img width="1000" src="../imgs/Rectangle 21.png" alt="books" />
-                <aside>
-                    <h2>
-                        Your favourite
-                        <span>
-                            Reads <br />
-                            Are Here!
-                        </span>
-                    </h2>
-                    <p>
-                        Discover your favorite books at the library! Access a diverse
-                        collection of titles, from timeless classics to the latest
-                        bestsellers. Explore unique resources like rare manuscripts and
-                        audiobooks, and engage in community events that spark your love
-                        for literature. Visit us today and unlock the joy of reading—your
-                        library is here to inspire you!
-                    </p>
-                    <div class="statistics">
-                        <div class="calc">
-                            <span class="num">800+</span>
-                            <span class="desc">Book Listings</span>
-                        </div>
-                        <div class="calc">
-                            <span class="num">1K+</span>
-                            <span class="desc">Registered Members</span>
-                        </div>
-                        <div class="calc">
-                            <span class="num">50+</span>
-                            <span class="desc">Branch Count</span>
-                        </div>
-                    </div>
-                    <a href="library.html"> Explore More </a>
-                </aside>
-            </div>
-        </section>
-        
-        <!-- Filter Section Removed -->
-        <!-- Book Content Section Removed -->
-        <!-- <section id="book-content" class="book-content"></section> -->
+            <a href="library.html"> Explore More </a>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Filter Section Removed -->
+      <!-- Book Content Section Removed -->
+      <!-- <section id="book-content" class="book-content"></section> -->
     </main>
 
     <footer>
-        <img src="../imgs/Rectangle 24.png" alt="" />
-        <div>
-            <span> &copy; 2024 | NETH BookLibrary. </span>
-            <span>
-                Visit our branches in Hebron, Gaza, Nablus, and Jerusalem, and
-                register for our online platform to enjoy maximum benefits!
-            </span>
-        </div>
+      <img src="../imgs/Rectangle 24.png" alt="" />
+      <div>
+        <span> &copy; 2024 | NETH BookLibrary. </span>
+        <span>
+          Visit our branches in Hebron, Gaza, Nablus, and Jerusalem, and
+          register for our online platform to enjoy maximum benefits!
+        </span>
+      </div>
     </footer>
 
     <script src="../scripts/script.js"></script>
-</body>
+  </body>
 </html>
