@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>library</title>
+    <title>Library</title>
     <link rel="stylesheet" href="../styles/library.css" />
     <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/checkboxes.css" />
+    <!-- Link to the checkbox styles -->
   </head>
   <body>
     <header>
@@ -18,24 +20,16 @@
       </div>
       <nav>
         <ul>
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-            <a href="about.html">About</a>
-          </li>
-          <li>
-            <a href="library.html">Library</a>
-          </li>
-          <li>
-            <a href="peraonalLibrary.html">Peraonal Library</a>
-          </li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="library.html">Library</a></li>
+          <li><a href="personalLibrary.html">Personal Library</a></li>
         </ul>
       </nav>
       <div class="right">
         <img src="../imgs/Bell.png" alt="Notification Bell" />
         <div class="pic">
-          <img src="../imgs/profile-pic.png" alt="profile pic" />
+          <img src="../imgs/profile-pic.png" alt="Profile pic" />
           <span>user1@booklibrary.com</span>
         </div>
       </div>
@@ -43,8 +37,6 @@
 
     <main>
       <h2>Explore All Books Here</h2>
-      <input type="text" id="search" onclick="search()" />
-      <span >Search</span>
 
       <span onclick="openForm()" class="add-book">+</span>
 
@@ -65,13 +57,52 @@
       </div>
 
       <div id="book-content"></div>
-      // this is where the books will be displayed
+      <!-- This is where the books will be displayed -->
+
+      <!-- Checkbox section -->
+      <div class="label-container">
+        <div class="label">
+          <input type="checkbox" id="all" class="filter" value="All" checked />
+          <label for="all" class="checkbox-icon"></label>
+          <span class="label-text">All</span>
+        </div>
+
+        <div class="label">
+          <input type="checkbox" id="novel" class="filter" value="Novel" />
+          <label for="novel" class="checkbox-icon"></label>
+          <span class="label-text">Novel</span>
+        </div>
+
+        <div class="label">
+          <input
+            type="checkbox"
+            id="translations"
+            class="filter"
+            value="Translations"
+          />
+          <label for="translations" class="checkbox-icon"></label>
+          <span class="label-text">Translations</span>
+        </div>
+
+        <div class="label">
+          <input
+            type="checkbox"
+            id="kids-stories"
+            class="filter"
+            value="Kids' Stories"
+          />
+          <label for="kids-stories" class="checkbox-icon"></label>
+          <span class="label-text">Kids' Stories</span>
+        </div>
+      </div>
+
+      <!-- End of Checkbox section -->
     </main>
 
     <footer>
       <img src="../imgs/Rectangle 24.png" alt="" />
       <div>
-        <span> &copy; 2024 | NETH BookLibrary. </span>
+        <span>&copy; 2024 | NETH BookLibrary. </span>
         <span>
           Visit our branches in Hebron, Gaza, Nablus, and Jerusalem, and
           register for our online platform to enjoy maximum benefits!
