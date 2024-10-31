@@ -178,6 +178,20 @@ const loadPersonalBooks = () => {
   }
 };
 
+const search = () => {
+  let input = document.getElementById("search").value;
+  input = input.toLowerCase();
+  // let x = document.getElementsByClassName('book');
+
+  for (let i = 0; i < BOOKs.length; i++) {
+    if (!BOOKs[i].title.toLowerCase().includes(input)) {
+      document.getElementById(i).style.display = "none";
+    } else {
+      document.getElementById(i).style.display = "block";
+    }
+  }
+};
+
 const saveData = () => {
   localStorage.setItem("books", JSON.stringify(BOOKs));
   localStorage.setItem("personalBooks", JSON.stringify(personalBooks) || []);
