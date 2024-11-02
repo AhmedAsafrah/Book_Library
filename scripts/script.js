@@ -40,7 +40,7 @@ const bookContent = document.getElementById("book-content");
 
 const updateFilter = (filter) => {
   console.log("Filter updated to:", filter);
-  selectedFilter = filter;
+  selectedFilter = filter.toLowerCase(); // Normalize to lowercase
   renderBooks();
 };
 
@@ -53,12 +53,17 @@ filterCheckboxes.forEach((checkbox) => {
   });
 });
 
-const renderBooks = () => {
+const renderBooks = (booksToRender = BOOKs) => {
   console.log("Rendering books with filter:", selectedFilter);
   bookContent.innerHTML = "";
 
-  const filteredBooks = BOOKs.filter((book) => {
-    return selectedFilter === "All" || book.genre === selectedFilter;
+  const normalizedFilter = selectedFilter.toLowerCase();
+
+  const filteredBooks = booksToRender.filter((book) => {
+    return (
+      normalizedFilter === "all" ||
+      book.genre.toLowerCase() === normalizedFilter
+    );
   });
 
   filteredBooks.forEach((book, displayIndex) => {
@@ -84,12 +89,26 @@ const renderBooks = () => {
   });
 };
 
+const search = () => {
+  const searchField = document
+    .getElementById("search-input")
+    .value.toLowerCase();
+  const searchedBooks = BOOKs.filter(
+    (book) =>
+      book.title.toLowerCase().includes(searchField) ||
+      book.author.toLowerCase().includes(searchField)
+  );
+
+  renderBooks(searchedBooks);
+};
+
 const addBookToPersonalLibrary = (index) => {
   const bookToAdd = BOOKs[index];
   if (!personalBooks.some((book) => book.title === bookToAdd.title)) {
     personalBooks.push(bookToAdd);
     saveData();
     alert(`${bookToAdd.title} has been added to your personal library!`);
+    renderPersonalBooks(); // Call this to update the UI
   } else {
     alert(`${bookToAdd.title} is already in your personal library.`);
   }
@@ -105,10 +124,11 @@ const addBook = () => {
     alert("Please fill out all fields before adding a book.");
     return;
   }
+
   const newBook = {
     title: bookTitle,
     author: bookAuthor,
-    genre: bookGenre,
+    genre: bookGenre.toLowerCase(), // Normalize genre to lowercase
     img: bookImg,
     read: false,
   };
@@ -218,5 +238,4 @@ if (bookContent) {
 
 window.onload = () => {
   loadPersonalBooks();
-  console.log("Window loaded, loading personal books...");
 };

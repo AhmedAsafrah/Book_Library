@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../styles/library.css" />
     <link rel="stylesheet" href="../styles/style.css" />
     <link rel="stylesheet" href="../styles/checkboxes.css" />
-    <!-- Link to the checkbox styles -->
+    <link rel="icon" href="../imgs/looogo.png" type="image/png" />
   </head>
   <body>
     <header>
@@ -56,10 +56,6 @@
         </div>
       </div>
 
-      <div id="book-content"></div>
-      <!-- This is where the books will be displayed -->
-
-      <!-- Checkbox section -->
       <div class="label-container">
         <div class="label">
           <input type="checkbox" id="all" class="filter" value="All" checked />
@@ -96,7 +92,18 @@
         </div>
       </div>
 
-      <!-- End of Checkbox section -->
+      <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search books..."
+          oninput="search()"
+        />
+        <button onclick="search()">Search</button>
+      </div>
+
+      <div id="book-content"></div>
     </main>
 
     <footer>
