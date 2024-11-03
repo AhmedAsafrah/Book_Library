@@ -56,9 +56,11 @@ main span.add-book:active {
     align-items: center; 
     width: 350px; 
     font-size: 15px; 
-    position: absolute; 
-    top: 220px;
-    right: 210px;
+    position: relative;  
+    top: 40px;
+    right: 10px;
+    left: 10px;
+    transform: translate();
     background-image: url('../imgs/search.jpg');
     background-size: cover;
     background-position: center;
