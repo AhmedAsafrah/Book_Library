@@ -1,8 +1,9 @@
 📚 Book Library
+------------------------------------
 This project was developed as part of a training program with Gaza Sky Geeks (GSG) by Ahmed Asafrah and Haitham Murad Abu Khaled.
 It aims to create a dynamic and user-friendly book library where users can organize their book collections, mark books as read or unread, and add books to a personal library.
 The project is built using HTML, CSS, and JavaScript, with data persistence achieved via local storage and an API.
-------------------------------------
+
 
 Project Overview
 Description: The Book Library project is a book catalog system designed for users to easily manage their personal libraries. It enables users to add books, search for specific titles or authors, and keep track of their reading status.
@@ -22,7 +23,6 @@ Users can add selected books to their personal library and view this curated col
 
 Data Storage
 Book data is stored and retrieved using localStorage or from an external API, ensuring that data is saved and accessible across sessions.
-------------------------------------
 
 Technologies Used
 HTML
