@@ -1,5 +1,4 @@
 const bookList = () => {
-  console.log("Fetching book list from API...");
   return fetch("https://d508d3a3bab44aecb5fed0f178cf38ca.api.mockbin.io/")
     .then((response) => {
       if (response.ok) {
@@ -20,7 +19,6 @@ const personalBooks = [];
 let selectedFilter = "All";
 
 const loadData = () => {
-  console.log("Loading data...");
   const savedBooks = JSON.parse(localStorage.getItem("books"));
   if (savedBooks && savedBooks.length) {
     console.log("Loaded books from localStorage:", savedBooks);
@@ -40,7 +38,7 @@ const bookContent = document.getElementById("book-content");
 
 const updateFilter = (filter) => {
   console.log("Filter updated to:", filter);
-  selectedFilter = filter.toLowerCase(); // Normalize to lowercase
+  selectedFilter = filter.toLowerCase();
   renderBooks();
 };
 
@@ -66,7 +64,7 @@ const renderBooks = (booksToRender = BOOKs) => {
     );
   });
 
-  filteredBooks.forEach((book, displayIndex) => {
+  filteredBooks.forEach((book) => {
     const actualIndex = BOOKs.indexOf(book);
     bookContent.insertAdjacentHTML(
       "beforeend",
@@ -93,6 +91,7 @@ const search = () => {
   const searchField = document
     .getElementById("search-input")
     .value.toLowerCase();
+
   const searchedBooks = BOOKs.filter(
     (book) =>
       book.title.toLowerCase().includes(searchField) ||
